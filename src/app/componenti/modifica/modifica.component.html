@@ -1,0 +1,118 @@
+<h1 class="sinistra2">Modifica</h1>
+
+
+
+<div >
+  
+   
+    <form [formGroup]="formGruppo">
+        <div class="griglia"  >
+   
+            
+                <div class="field-name" class="margineSinistra">ID Commessa:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="id"  formControlName="idCommessa"/>
+           </mat-form-field>
+         </div>
+        
+         <div class="field-name" class="margineSinistra">OGGETTO:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="oggetto" formControlName="oggetto" />
+           </mat-form-field>
+        </div>
+         
+        
+         <div class="field-name" class="margineSinistra">STATO:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="object" name="nameStato" formControlName="statoName" />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">DATA CREAZIONE:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="dataCreazione" />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">STATO APPROVAZIONE:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="statoApprovazione"  />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">NOTE:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="note"  />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">CAMPO 1:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="Campo1" />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">CAMPO 2:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="Campo2"  />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">CAMPO 3:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="Campo3" />
+           </mat-form-field>
+         </div>
+        
+        
+         <div class="field-name" class="margineSinistra">CAMPO 4:</div>
+         <div class="field-input">
+           <mat-form-field class="margineDestra">
+             <mat-label></mat-label>
+             <input matInput type="text" name="Campo4"  />
+           </mat-form-field>
+         </div>
+        
+    
+  
+        
+        
+        
+    </div>
+    
+    <button class="sinistra" mat-raised-button color="primary" (click)="modifica()" > Modifica</button>
+    <button class="sinistra2" mat-raised-button color="warn" (click)="torna()" >Torna </button>
+
+    <ng-template #messaggioModifica let-dialogRef>
+      <mat-dialog-content>
+          Vuoi confermare le modifiche?  
+        <button class="bottoneConferme" mat-raised-button color="primary" (click)="confermaModifiche()" >Conferma</button>
+        <button class="bottoneConferme" mat-raised-button color="warn" (click)="annullaModifiche()" >Annulla </button>  
+      </mat-dialog-content>
+  
+  
+    </ng-template>

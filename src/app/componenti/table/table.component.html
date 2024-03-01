@@ -1,0 +1,27 @@
+
+<table class="full-width-table">
+    <thead>
+      <tr>
+        <th>Id-commessa</th>
+        <th>Oggetto</th>
+        <th>Stato</th>
+        <th>Data-creazione</th>
+        <th>Stato-approvazione</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let richiesta of richieste">
+        <td>{{ richiesta.idCommessa }}</td>
+        <td>{{ richiesta.oggetto }}</td>
+        <td>{{ richiesta.stato.nameStato }}</td>
+        <td>{{ richiesta.dataCreazione }}</td>
+        <td>{{ richiesta.statoApprovazione.nameStatoApprovazione }}</td>
+        <td>{{ richiesta.note }}</td>
+        <td>
+          <button mat-raised-button color="warn" (click)="OnVisualizza(richiesta)" >Visualizza</button>
+          <button mat-raised-button color="primary" (click)="OnModifica(richiesta)" >Modifica</button> 
+        </td>
+      </tr>
+    </tbody>
+  </table>

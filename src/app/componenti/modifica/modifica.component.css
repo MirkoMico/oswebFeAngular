@@ -1,0 +1,43 @@
+.sinistra{
+    margin-left: 8px;
+    text-align: right;
+    line-height: 50px;
+}
+.sinistra2{
+   margin-left: 400px;
+}
+
+.margineDestra{
+    margin-right: 750px;
+    width: 800px;
+    
+   
+
+}
+
+.colore{
+    color: chocolate;
+}
+
+.griglia{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    margin-left: 60px;
+    
+    
+}
+.field-name {
+    font-weight: bold; /* Testo in grassetto per i nomi dei campi */
+ }
+ 
+ 
+ .field-input {
+    align-self: center; /* Allinea al centro rispetto all'altezza della cella */
+ }
+
+ .bottoneConferme{
+    margin-left: 10px;
+    width: 100px ;
+ }
+ 

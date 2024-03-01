@@ -1,0 +1,212 @@
+<!--<div *ngIf="daVisualizzare"></div>
+<h1 style="text-align: center;">Visualizza</h1>
+
+<form class="sinistra">
+<mat-form-field  >
+    <mat-label></mat-label>
+    <input matInput type="userName" name="userName"  ngModel>
+  </mat-form-field>
+  <P></P>
+
+<mat-form-field >
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+  
+  
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+  <p></p>
+
+  <mat-form-field>
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+  
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label >
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label>
+    <input matInput type="password" name="password" ngModel>
+  </mat-form-field>
+  <p></p>
+  <mat-form-field>
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+  
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+
+  <mat-form-field class="sinistra">
+    <mat-label></mat-label>
+    <input matInput type="password" name="password"  ngModel>
+  </mat-form-field>
+  
+  <button  mat-raised-button color="primary" class="sinistra">Torna Indietro</button>
+</form>
+</div>-->
+
+<h2 class="sinistra2">Visualizza</h2>
+<div class="griglia"  >
+   
+    <form #form="ngForm"  >
+        <div class="field-name" class="margineSinistra">ID:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="id" [(ngModel)]="tizio.idCommessa" readonly/>
+   </mat-form-field>
+ </div>
+
+ <div class="field-name" class="margineSinistra">OGGETTO:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="oggetto" [(ngModel)]="tizio.oggetto" readonly/>
+   </mat-form-field>
+</div>
+ 
+
+ <div class="field-name" class="margineSinistra">STATO:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="object" name="nameStato" [(ngModel)]="tizio.stato.nameStato" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">DATA CREAZIONE:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="dataCreazione" [(ngModel)]="tizio.dataCreazione" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">STATO APPROVAZIONE:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="statoApprovazione" [(ngModel)]="tizio.statoApprovazione.nameStatoApprovazione" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">NOTE:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="note" [(ngModel)]="tizio.note" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">CAMPO 1:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="Campo1"[(ngModel)]="tizio.campo1" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">CAMPO 2:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="Campo2" [(ngModel)]="tizio.campo2" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">CAMPO 3:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="Campo3" [(ngModel)]="tizio.campo3" readonly/>
+   </mat-form-field>
+ </div>
+
+
+ <div class="field-name" class="margineSinistra">CAMPO 4:</div>
+ <div class="field-input">
+   <mat-form-field class="margineDestra">
+     <mat-label></mat-label>
+     <input matInput type="text" name="Campo4" [(ngModel)]="tizio.campo4" readonly/>
+   </mat-form-field>
+ </div>
+
+
+
+
+
+     <!--<label for="idCommessa" class="sinistra" >Id commessa:</label>
+      <input class="destra"  type="text" name="idCommessa" [(ngModel)]="tizio.idCommessa" readonly/>
+      <p></p>
+  
+      <label for="oggetto" class="sinistra">Oggetto</label>
+      <input class="destra" type="text" name="oggetto" [(ngModel)]="tizio.oggetto" readonly />
+
+      <p></p>
+  
+      <label for="nameStato">Stato:</label>
+      <input type="object" name="nameStato" [(ngModel)]="tizio.nameStato" readonly/>
+
+      <p></p>
+
+      <label for="dataCreazione">Data Creazione:</label>
+      <input type="text" name="dataCreazione" [(ngModel)]="tizio.dataCreazione" readonly />
+
+      <p></p>
+      
+      <label for="statoApprovazione">Stato Approvazione:</label>
+      <input type="text" name="statoApprovazione" [(ngModel)]="tizio.nameStatoApprovazione" readonly/>
+
+      <p></p>
+      
+      <label for="note">Note:</label>
+      <input type="text" name="note" [(ngModel)]="tizio.note" readonly/>
+
+      <p></p>
+      
+      <label for="Campo1">Campo1:</label>
+      <input type="text" name="Campo1" [(ngModel)]="tizio.Campo1" readonly/>
+
+      <p></p>
+      
+      <label for="Campo2">Campo2:</label>
+      <input type="text" name="Campo2" [(ngModel)]="tizio.Campo2" readonly/>
+
+      <p></p>
+
+      <label for="Campo3">Campo3:</label>
+      <input type="text" name="Campo3" [(ngModel)]="tizio.Campo3" readonly/>
+
+      <p></p>
+
+      <label for="Campo4">Campo4:</label>
+      <input type="text" name="Campo4" [(ngModel)]="tizio.Campo4" readonly/>
+
+      <p></p>-->
+      
+  
+      <button class="sinistra" mat-raised-button color="warn" (click)="torna()" >Torna</button>
+    </form>
+  </div>
+
+
