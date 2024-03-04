@@ -11,16 +11,16 @@
       </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let richiesta of richieste">
+     <tr *ngFor="let richiesta of richiesteClasse |async">
         <td>{{ richiesta.idCommessa }}</td>
         <td>{{ richiesta.oggetto }}</td>
-        <td>{{ richiesta.stato.nameStato }}</td>
+        <td>{{ richiesta.stato?.nameStato || richiesta.stato}}</td>
         <td>{{ richiesta.dataCreazione }}</td>
-        <td>{{ richiesta.statoApprovazione.nameStatoApprovazione }}</td>
+        <td>{{ richiesta.statoApprovazione?.nameStatoApprovazione || richiesta.statoApprovazione }}</td>
         <td>{{ richiesta.note }}</td>
         <td>
           <button mat-raised-button color="warn" (click)="OnVisualizza(richiesta)" >Visualizza</button>
-          <button mat-raised-button color="primary" (click)="OnModifica(richiesta)" >Modifica</button> 
+          <button mat-raised-button color="primary" (click)="onModifica(richiesta.id)" >Modifica</button> 
         </td>
       </tr>
     </tbody>

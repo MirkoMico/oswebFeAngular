@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'table', component: TableComponent},
 
   {path: 'visualizza', component: VisualizzaComponent},
-  {path: 'modifica', component: ModificaComponent}
+  {path: 'modifica/:id', component: ModificaComponent}
 ];
 
 @NgModule({

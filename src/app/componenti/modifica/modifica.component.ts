@@ -23,7 +23,7 @@ import { Richiesteclasse } from '../../richiesteclasse';
 })
 export class ModificaComponent implements OnInit{
 
-  //richieste: richieste = new Richiesteclasse()
+  richiesteClasse: Richiesteclasse = new Richiesteclasse()
 
 
 
@@ -32,7 +32,7 @@ export class ModificaComponent implements OnInit{
   
   
   //public richieste : richieste[]
-  //id: number;
+  id: number;
   
   
   constructor(private route: ActivatedRoute,private servizio: RichiesteServiceService,
@@ -49,13 +49,20 @@ export class ModificaComponent implements OnInit{
   data: any
 
   formGruppo: FormGroup
+
+  message: any;
+
   
   
 
 
   confermaModifiche(){
+   let resp= this.servizio.modificaRichiesta(this.tizio.id,this.tizio);
+   resp.subscribe((data)=> this.message=data);
+
+
     
-    
+ /*    
     const richiestaOK = this.formGruppo.value;
     console.log(richiestaOK + 'pppppppp')
     
@@ -64,7 +71,7 @@ export class ModificaComponent implements OnInit{
     this.servizio.pathString(idOk, richiestaOK).subscribe((response)=>{
       console.log(JSON.stringify(response) + ' ciao grandi');
 
-    });
+    }); */
 
   }
 

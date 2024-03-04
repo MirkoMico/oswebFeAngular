@@ -27,9 +27,13 @@ export class RichiesteServiceService {
     return this.http.put<any>(apiUrl, body);
   } */
 
-  public pathString( richiestaClasse: Richiesteclasse, id: number): Observable<Richiesteclasse>{
+  /* public pathString( richiestaClasse: Richiesteclasse, id: number): Observable<Richiesteclasse>{
     //const header ={headers: new HttpHeaders({'Content-Type': 'application/json'})}
     return this.http.put<any>(`${this.url}/richieste/${id}`,richiestaClasse)
+  } */
+
+  public modificaRichiesta(id:number, richiesteclasse: Richiesteclasse  ){
+    return this.http.put("http://localhost:8080/richieste",richiesteclasse,{responseType: 'text' as 'json'})
   }
   
 }

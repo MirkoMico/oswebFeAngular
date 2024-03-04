@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RichiesteServiceService } from '../../richieste-service.service';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { error } from 'console';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute, Router} from '@angular/router';
@@ -24,13 +24,14 @@ import { Richiesteclasse } from '../../richiesteclasse';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css',
-  //styleUrls: './table.component.css'
+  //styleUrl: './table.component.css',
+  styleUrls: ['./table.component.css']
 
 })
 
 
 export class TableComponent implements OnInit {
+  richiesteClasse: Observable<any>;
 
   constructor(private connessione:RichiesteServiceService, private router: Router,private activateRouter: ActivatedRoute ){
   
@@ -39,7 +40,7 @@ export class TableComponent implements OnInit {
 
   colonne: any
 
-  public richieste: Richiesteclasse[];
+ // public richiesteClasse: Richiesteclasse[];
 
 
   ngOnInit(): void {
@@ -50,8 +51,12 @@ export class TableComponent implements OnInit {
     
   }
 
+  public getRichieste(){
+    this.richiesteClasse= this.connessione.getRichieste();
+  }
 
-   public getRichieste():void{
+
+   /* public getRichieste():void{
     this.connessione.getRichieste().pipe(
       catchError((error:HttpErrorResponse)=>{
       console.error("error" + error);
@@ -60,7 +65,7 @@ export class TableComponent implements OnInit {
     ).subscribe((response:Richiesteclasse[]) =>{
       this.richieste=response;
     });
-  }
+  } */
 
   OnVisualizza(richiesta: any){ 
     console.log(JSON.stringify(richiesta));
@@ -68,11 +73,15 @@ export class TableComponent implements OnInit {
     this.router.navigate(['/visualizza'], { queryParams: { pippo: JSON.stringify(richiesta) } });
   }
 
-     OnModifica(richiesta: any){ 
+  /*    OnModifica(richiesta: any){ 
       console.log(JSON.stringify(richiesta));  //metodo nostro
     
       this.router.navigate(['/modifica'], { queryParams: { pippo: JSON.stringify(richiesta) } });
-    }  
+    }   */
+
+    onModifica(id:number){
+      this.router.navigate(['modifica',id]);
+    }
 
    /*  OnModifica(id: number){
       this.router.navigate(['/modifica',id])  //metodo indianino
