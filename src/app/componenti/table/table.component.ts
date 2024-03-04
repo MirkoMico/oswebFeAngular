@@ -3,9 +3,10 @@ import { RichiesteServiceService } from '../../richieste-service.service';
 import { catchError, throwError } from 'rxjs';
 import { error } from 'console';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
+import { Richiesteclasse } from '../../richiesteclasse';
 
-export interface richieste {
+/*  export interface richieste {
   id: number;
   idCommessa: number;
   oggetto: string;
@@ -18,7 +19,7 @@ export interface richieste {
   campo3: string;
   campo4: string;
   
- }
+ }  */
 
 @Component({
   selector: 'app-table',
@@ -31,11 +32,14 @@ export interface richieste {
 
 export class TableComponent implements OnInit {
 
-  constructor(private connessione:RichiesteServiceService, private router: Router ){}
+  constructor(private connessione:RichiesteServiceService, private router: Router,private activateRouter: ActivatedRoute ){
+  
+  }
+
 
   colonne: any
 
-  public richieste: richieste[];
+  public richieste: Richiesteclasse[];
 
 
   ngOnInit(): void {
@@ -53,7 +57,7 @@ export class TableComponent implements OnInit {
       console.error("error" + error);
       return throwError(error);
     })
-    ).subscribe((response:richieste[]) =>{
+    ).subscribe((response:Richiesteclasse[]) =>{
       this.richieste=response;
     });
   }
@@ -64,11 +68,15 @@ export class TableComponent implements OnInit {
     this.router.navigate(['/visualizza'], { queryParams: { pippo: JSON.stringify(richiesta) } });
   }
 
-    OnModifica(richiesta: any){ 
-      console.log(JSON.stringify(richiesta));
+     OnModifica(richiesta: any){ 
+      console.log(JSON.stringify(richiesta));  //metodo nostro
     
       this.router.navigate(['/modifica'], { queryParams: { pippo: JSON.stringify(richiesta) } });
-    }
+    }  
+
+   /*  OnModifica(id: number){
+      this.router.navigate(['/modifica',id])  //metodo indianino
+    }  */
 
      
 

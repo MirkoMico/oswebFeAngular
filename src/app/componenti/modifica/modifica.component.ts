@@ -5,7 +5,7 @@ import { RichiesteServiceService } from '../../richieste-service.service';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { url } from 'inspector';
 import { response } from 'express';
-import { richieste } from '../table/table.component';
+//import { richieste } from '../table/table.component';
 import { error } from 'console';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, catchError, throwError } from 'rxjs';

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { richieste } from './componenti/table/table.component';
+//import { richieste } from './componenti/table/table.component';
 import { Richiesteclasse } from './richiesteclasse';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class RichiesteServiceService {
 
   private url="http://localhost:8080"
 
-  public getRichieste():Observable<richieste[]>{
+  public getRichieste():Observable<Richiesteclasse[]>{
     return this.http.get<any>(`${this.url}/richieste`)
 
   }
@@ -27,9 +27,9 @@ export class RichiesteServiceService {
     return this.http.put<any>(apiUrl, body);
   } */
 
-  public pathString( richiesta: richieste, id: number): Observable<richieste[]>{
+  public pathString( richiestaClasse: Richiesteclasse, id: number): Observable<Richiesteclasse>{
     //const header ={headers: new HttpHeaders({'Content-Type': 'application/json'})}
-    return this.http.put<any>(`${this.url}/richieste/${id}`,richiesta)
+    return this.http.put<any>(`${this.url}/richieste/${id}`,richiestaClasse)
   }
   
 }
