@@ -1,4 +1,5 @@
 export class Richiesteclasse {
+  id: number;
 
     idCommessa: number;
   oggetto: string;

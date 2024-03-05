@@ -11,10 +11,10 @@ export class RichiesteServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private url="http://localhost:8080"
+  private url="http://localhost:8080/richieste"
 
   public getRichieste():Observable<Richiesteclasse[]>{
-    return this.http.get<any>(`${this.url}/richieste`)
+    return this.http.get<any>(`${this.url}`)
 
   }
  /* public  pathString(url: string, id: string, body: {}):Observable<richieste[]>{

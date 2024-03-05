@@ -33,7 +33,7 @@ import { VisualizzaComponent } from './componenti/visualizza/visualizza.componen
     TableComponent,
     VisualizzaComponent,
     ModificaComponent,
-  
+
   ],
   imports: [
     

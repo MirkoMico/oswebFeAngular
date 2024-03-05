@@ -23,7 +23,7 @@ import { Richiesteclasse } from '../../richiesteclasse';
 })
 export class ModificaComponent implements OnInit{
 
-  //richieste: richieste = new Richiesteclasse()
+  richieste: Richiesteclasse = new Richiesteclasse()
 
 
 

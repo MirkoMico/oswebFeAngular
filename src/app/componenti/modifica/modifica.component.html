@@ -1,4 +1,4 @@
-<h1 class="sinistra2">Modifica</h1>
+<!-- <h1 class="sinistra2">Modifica</h1>
 
 
 
@@ -116,3 +116,69 @@
   
   
     </ng-template>
+ -->
+ <div class="container">
+    <h2>Modifica Component</h2>
+  
+    <form [formGroup]="formGruppo">
+      <div class="form-group">
+        <label for="idCommessa">Id Commessa</label>
+        <input type="text" class="form-control" id="idCommessa" formControlName="idCommessa" >
+      </div>
+  
+      <div class="form-group">
+        <label for="oggetto">Oggetto</label>
+        <input type="text" class="form-control" id="oggetto" formControlName="oggetto">
+      </div>
+  
+      <div class="form-group">
+        <label for="statoName">Stato</label>
+        <input type="text" class="form-control" id="statoName" formControlName="statoName" >
+      </div>
+  
+      <div class="form-group">
+        <label for="dataCreazione">Data Creazione</label>
+        <input type="text" class="form-control" id="dataCreazione" formControlName="dataCreazione" >
+      </div>
+  
+      <div class="form-group">
+        <label for="statoApprovazione">Stato Approvazione</label>
+        <input type="text" class="form-control" id="statoApprovazione" formControlName="statoApprovazione">
+      </div>
+  
+      <div class="form-group">
+        <label for="note">Note</label>
+        <textarea class="form-control" id="note" formControlName="note"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="campo1">Campo 1</label>
+        <input type="text" class="form-control" id="campo1" formControlName="campo1">
+      </div>
+  
+      <div class="form-group">
+        <label for="campo2">Campo 2</label>
+        <input type="text" class="form-control" id="campo2" formControlName="campo2">
+      </div>
+  
+      <div class="form-group">
+        <label for="campo3">Campo 3</label>
+        <input type="text" class="form-control" id="campo3" formControlName="campo3">
+      </div>
+  
+      <div class="form-group">
+        <label for="campo4">Campo 4</label>
+        <input type="text" class="form-control" id="campo4" formControlName="campo4">
+      </div>
+  
+      <button mat-raised-button color="primary" (click)="confermaModifiche()">Conferma Modifiche</button>
+      <button mat-raised-button color="warn" (click)="annullaModifiche()">Annulla</button>
+    </form>
+  </div>
+  
+  <ng-template #messaggioModifica>
+    <div>
+      <!-- Add your confirmation message template here -->
+    </div>
+  </ng-template>
+  

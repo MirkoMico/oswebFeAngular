@@ -43,15 +43,21 @@ export class TableComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getRichieste();
+     this.getRichieste(); 
   
  
     
     
   }
 
+  private getRichieste(){
+    this.connessione.getRichieste().subscribe(data=>{
+      this.richieste=data;
+    })
+  }
 
-   public getRichieste():void{
+
+  /*  public getRichieste():void{
     this.connessione.getRichieste().pipe(
       catchError((error:HttpErrorResponse)=>{
       console.error("error" + error);
@@ -60,7 +66,7 @@ export class TableComponent implements OnInit {
     ).subscribe((response:Richiesteclasse[]) =>{
       this.richieste=response;
     });
-  }
+  } */
 
   OnVisualizza(richiesta: any){ 
     console.log(JSON.stringify(richiesta));
@@ -68,10 +74,12 @@ export class TableComponent implements OnInit {
     this.router.navigate(['/visualizza'], { queryParams: { pippo: JSON.stringify(richiesta) } });
   }
 
-     OnModifica(richiesta: any){ 
-      console.log(JSON.stringify(richiesta));  //metodo nostro
+     OnModifica(id: number){ 
+
+      this.router.navigate(['/modifica',id])
+    /*   console.log(JSON.stringify(richiesta));  //metodo nostro
     
-      this.router.navigate(['/modifica'], { queryParams: { pippo: JSON.stringify(richiesta) } });
+      this.router.navigate(['/modifica'], { queryParams: { pippo: JSON.stringify(richiesta) } }); */
     }  
 
    /*  OnModifica(id: number){
